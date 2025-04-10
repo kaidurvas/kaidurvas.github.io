@@ -8602,33 +8602,40 @@ input, select, textarea {
 				box-shadow: none !important;
 			}
 
-#site-nav {
+/* Slimmed, subtle nav wrapper */
+#nav-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(6px);
-  z-index: 1000;
-  padding: 0.8em 1.6em;
-  font-family: 'Source Sans Pro', sans-serif;
+  background: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-#site-nav .container {
+/* Clean nav bar */
+#site-nav {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0.5em 1.2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Site title */
 #site-nav h1 a {
   color: #fff;
   text-decoration: none;
-  font-size: 1em;
-  letter-spacing: 0.04em;
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
+/* Nav links */
 #site-nav nav ul {
   list-style: none;
   display: flex;
@@ -8638,10 +8645,10 @@ input, select, textarea {
 }
 
 #site-nav nav ul li a {
-  color: #fff;
+  color: #eee;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95em;
+  font-size: 0.9em;
   transition: color 0.3s ease;
 }
 
@@ -8649,7 +8656,7 @@ input, select, textarea {
   color: #cfa657;
 }
 
-/* Adjust body spacing to match nav height */
+/* Push body content below nav */
 body {
-  padding-top: 70px;
+  padding-top: 60px;
 }

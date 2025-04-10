@@ -8665,3 +8665,15 @@ input, select, textarea {
 body {
   padding-top: 52px;
 }
+
+.temple-tile {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.temple-tile:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.2);
+}

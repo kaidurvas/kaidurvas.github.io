@@ -8644,3 +8644,48 @@ input, select, textarea {
 #page-header nav ul li a:hover {
   color: #cfa657;
 }
+
+/* Fixed Custom Nav Bar */
+#site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  padding: 1em 2em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#site-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#site-nav h1 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
+#site-nav nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+#site-nav nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#site-nav nav ul li a:hover {
+  color: #cfa657;
+}

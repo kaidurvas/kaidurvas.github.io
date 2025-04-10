@@ -8601,3 +8601,46 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+/* Mythic Nav Bar */
+#page-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  padding: 1.2em 2em;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+}
+
+#page-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-header h1 a {
+  font-size: 1.2em;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+#page-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2em;
+  margin: 0;
+}
+
+#page-header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#page-header nav ul li a:hover {
+  color: #cfa657;
+}

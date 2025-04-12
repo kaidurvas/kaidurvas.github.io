@@ -10,20 +10,24 @@
 <body class="is-preload">
   <div id="wrapper">
 
-    <!-- Nav -->
-    <nav id="nav">
-      <ul class="links">
-        <li><a href="about.html">The Voice</a></li>
-        <li><a href="katabasis.html" class="active">The Works</a></li>
-        <li><a href="deepnote.html">Deep Note</a></li>
-        <li><a href="artifacts.html">Artifacts</a></li>
-        <li><a href="contact.html">Whisper</a></li>
-      </ul>
-    </nav>
+    <!-- Header (nav + lines) -->
+    <header id="header">
+      <div class="content"></div>
+      <nav>
+        <ul>
+          <li><a href="about.html">The Voice</a></li>
+          <li><a href="katabasis.html" class="current">The Works</a></li>
+          <li><a href="deepnote.html">Deep Note</a></li>
+          <li><a href="artifacts.html">Artifacts</a></li>
+          <li><a href="contact.html">Whisper</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <div id="main">
 
+      <!-- Section 1 -->
       <article id="fork" class="panel">
         <div class="image">
           <img src="images/fork300.png" alt="Forked path and obelisk" />
@@ -34,6 +38,7 @@
         </div>
       </article>
 
+      <!-- Section 2 -->
       <article id="olympia" class="panel">
         <div class="image">
           <img src="images/olympia300.png" alt="Olympia" />
@@ -44,6 +49,7 @@
         </div>
       </article>
 
+      <!-- Section 3 -->
       <article id="arena" class="panel">
         <div class="image">
           <img src="images/stadium300.png" alt="The Stadium of the Games" />
@@ -54,6 +60,7 @@
         </div>
       </article>
 
+      <!-- Section 4 -->
       <article id="apokolasi" class="panel">
         <div class="image">
           <img src="images/apokolasi300.png" alt="Underworld spiral descent" />
@@ -74,5 +81,9 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- Background -->
+  <div id="bg"></div>
+
 </body>
 </html>

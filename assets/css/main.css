@@ -1367,12 +1367,12 @@ input, select, textarea {
 					font-size: 0.8rem;
 					border-bottom: 0;
 				}
-/* Highlight current nav item with soft inner glow */
+/* Highlight current nav item with pure typography */
 #header nav ul li a.current {
-  background-color: rgba(255, 255, 255, 0.04); /* light, internal glow */
-  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.12); /* soft interior light */
-  border-radius: 4px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 700;       /* bold */
+  font-size: 1rem;        /* larger than default (0.8rem) */
+  letter-spacing: 0.25rem;
+  color: #ffffff;
 }
 
 

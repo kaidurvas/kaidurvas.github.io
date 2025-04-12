@@ -6,63 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-  <style>
-    /* Ensure layout consistency */
-    #header {
-      position: relative;
-    }
-
-    #header .content {
-      position: relative;
-      height: 2rem;
-    }
-
-    /* Alternating layout */
-    .work-block {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4em 2em;
-      gap: 4em;
-      flex-wrap: wrap;
-    }
-
-    .work-block.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .work-block .image img {
-      max-width: 300px;
-      height: auto;
-      display: block;
-    }
-
-    .work-block .text {
-      max-width: 600px;
-      text-align: left;
-    }
-
-    @media screen and (max-width: 768px) {
-      .work-block {
-        flex-direction: column !important;
-        text-align: center;
-      }
-
-      .work-block .text {
-        text-align: center;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="is-preload">
 
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Header -->
+    <!-- Header (exact homepage structure) -->
     <header id="header">
-      <div class="content"></div>
+      <div class="logo"><span class="icon fa-gem"></span></div>
+
+      <div class="content">
+        <div class="inner">
+          <h1 style="font-size: 1px; opacity: 0;">filler</h1>
+        </div>
+      </div>
+
       <nav>
         <ul>
           <li><a href="index.html">The Voice</a></li>
@@ -74,7 +33,7 @@
       </nav>
     </header>
 
-    <!-- Alternating Content Blocks -->
+    <!-- Static Content -->
     <section id="content">
 
       <section class="work-block">
@@ -128,6 +87,13 @@
 
   <!-- Background -->
   <div id="bg"></div>
+
+  <!-- Scripts (required to remove .is-preload) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

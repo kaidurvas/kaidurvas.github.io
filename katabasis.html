@@ -8,30 +8,7 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Ensure #header is positioned correctly for line rendering */
-    #header {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Trigger the horizontal line */
-    #header .content {
-      position: relative;
-      height: 2rem;
-    }
-
-    #header .content:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Alternating layout */
+    /* Alternating layout for work sections */
     .work-block {
       display: flex;
       align-items: center;
@@ -73,9 +50,14 @@
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Header -->
+    <!-- Header (exact structure from homepage) -->
     <header id="header">
-      <div class="content"></div>
+      <div class="logo"><span class="icon fa-gem"></span></div>
+
+      <div class="content">
+        <div class="inner"></div>
+      </div>
+
       <nav>
         <ul>
           <li><a href="index.html">The Voice</a></li>
@@ -87,7 +69,7 @@
       </nav>
     </header>
 
-    <!-- Content -->
+    <!-- Alternating Content -->
     <section id="content">
 
       <section class="work-block">

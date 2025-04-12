@@ -6,15 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <style>
+    /* Ensure horizontal line above nav */
+    #header .content {
+      position: relative;
+      height: 2rem;
+    }
+
+    /* Alternating layout for work sections */
+    .work-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4em 2em;
+      gap: 4em;
+      flex-wrap: wrap;
+    }
+
+    .work-block.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .work-block .image img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+    }
+
+    .work-block .text {
+      max-width: 600px;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 768px) {
+      .work-block {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .work-block .text {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Header -->
+    <!-- Header (with horizontal & vertical line) -->
     <header id="header">
-      <div class="content"></div> <!-- Required for horizontal line -->
+      <div class="content"></div>
       <nav>
         <ul>
           <li><a href="index.html">The Voice</a></li>
@@ -26,31 +70,47 @@
       </nav>
     </header>
 
-    <!-- Static Content Sections -->
-    <section id="content" style="padding: 4em 2em 6em 2em; text-align: center;">
-      
-      <section style="margin-bottom: 5em;">
-        <h2 class="major">The Forked Path</h2>
-        <p>A choice not between good and evil—but between madness and memory. The road splits. The mind follows.</p>
-        <img src="images/fork300.png" alt="Forked path and obelisk" style="margin-top: 1em; max-width: 300px;" />
+    <!-- Static Alternating Content -->
+    <section id="content">
+
+      <section class="work-block">
+        <div class="image">
+          <img src="images/fork300.png" alt="Forked path and obelisk">
+        </div>
+        <div class="text">
+          <h2 class="major">The Forked Path</h2>
+          <p>A choice not between good and evil—but between madness and memory. The road splits. The mind follows.</p>
+        </div>
       </section>
 
-      <section style="margin-bottom: 5em;">
-        <h2 class="major">Olympia Remembered</h2>
-        <p>Before the Games became sacrifice, there was a city of knowledge, glory, and broken gods. This is its echo.</p>
-        <img src="images/olympia300.png" alt="Olympia" style="margin-top: 1em; max-width: 300px;" />
+      <section class="work-block reverse">
+        <div class="image">
+          <img src="images/olympia300.png" alt="Olympia">
+        </div>
+        <div class="text">
+          <h2 class="major">Olympia Remembered</h2>
+          <p>Before the Games became sacrifice, there was a city of knowledge, glory, and broken gods. This is its echo.</p>
+        </div>
       </section>
 
-      <section style="margin-bottom: 5em;">
-        <h2 class="major">The Arena of Thought</h2>
-        <p>Combat here is sacred—each strike, a symbol. Each loss, a forgetting. Blood writes the laws of this world.</p>
-        <img src="images/stadium300.png" alt="The Stadium of the Games" style="margin-top: 1em; max-width: 300px;" />
+      <section class="work-block">
+        <div class="image">
+          <img src="images/stadium300.png" alt="The Stadium of the Games">
+        </div>
+        <div class="text">
+          <h2 class="major">The Arena of Thought</h2>
+          <p>Combat here is sacred—each strike, a symbol. Each loss, a forgetting. Blood writes the laws of this world.</p>
+        </div>
       </section>
 
-      <section>
-        <h2 class="major">Apokolasi</h2>
-        <p>Descent is not punishment—it is initiation. Through serpents and silence, one reaches the final transmission.</p>
-        <img src="images/apokolasi300.png" alt="Underworld spiral descent" style="margin-top: 1em; max-width: 300px;" />
+      <section class="work-block reverse">
+        <div class="image">
+          <img src="images/apokolasi300.png" alt="Underworld spiral descent">
+        </div>
+        <div class="text">
+          <h2 class="major">Apokolasi</h2>
+          <p>Descent is not punishment—it is initiation. Through serpents and silence, one reaches the final transmission.</p>
+        </div>
       </section>
 
     </section>

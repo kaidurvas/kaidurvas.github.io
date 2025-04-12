@@ -8,7 +8,13 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Horizontal line fix */
+    /* Ensure #header is positioned correctly for line rendering */
+    #header {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Trigger the horizontal line */
     #header .content {
       position: relative;
       height: 2rem;
@@ -25,7 +31,7 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Alternating image/text layout */
+    /* Alternating layout */
     .work-block {
       display: flex;
       align-items: center;
@@ -81,7 +87,7 @@
       </nav>
     </header>
 
-    <!-- Alternating Content Blocks -->
+    <!-- Content -->
     <section id="content">
 
       <section class="work-block">

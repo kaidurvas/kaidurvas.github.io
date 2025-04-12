@@ -8,13 +8,25 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Ensure the horizontal line appears */
+    /* Force the horizontal line to appear */
     #header .content {
       position: relative;
       height: 2rem;
     }
 
-    /* Alternating layout for works */
+    #header .content::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 10;
+    }
+
+    /* Alternating layout for work sections */
     .work-block {
       display: flex;
       align-items: center;
@@ -58,7 +70,6 @@
 
     <!-- Header -->
     <header id="header">
-      <!-- Trigger horizontal line via .content -->
       <div class="content"></div>
 
       <nav>
@@ -72,7 +83,7 @@
       </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Alternating Content -->
     <section id="content">
 
       <section class="work-block">
@@ -127,7 +138,7 @@
   <!-- Background -->
   <div id="bg"></div>
 
-  <!-- Scripts (to remove is-preload and finalize layout) -->
+  <!-- JS to remove preload state -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>

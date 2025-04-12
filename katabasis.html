@@ -8,28 +8,17 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Clean, static header lines */
+    /* Ensure layout consistency */
     #header {
       position: relative;
-      z-index: 1;
     }
 
-    #header .line-trigger {
+    #header .content {
       position: relative;
       height: 2rem;
     }
 
-    #header .line-trigger::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Alternating content layout */
+    /* Alternating layout */
     .work-block {
       display: flex;
       align-items: center;
@@ -73,7 +62,7 @@
 
     <!-- Header -->
     <header id="header">
-      <div class="line-trigger"></div>
+      <div class="content"></div>
       <nav>
         <ul>
           <li><a href="index.html">The Voice</a></li>
@@ -85,7 +74,7 @@
       </nav>
     </header>
 
-    <!-- Content -->
+    <!-- Alternating Content Blocks -->
     <section id="content">
 
       <section class="work-block">
@@ -137,7 +126,7 @@
 
   </div>
 
-  <!-- Background Layer -->
+  <!-- Background -->
   <div id="bg"></div>
 
 </body>

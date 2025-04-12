@@ -1369,9 +1369,11 @@ input, select, textarea {
 				}
 /* Highlight current nav item */
 #header nav ul li a.current {
-  background-color: rgba(255, 255, 255, 0.05); /* subtle light fill */
-  border-color: rgba(255, 255, 255, 0.9);      /* slightly stronger border */
+  background-color: rgba(255, 255, 255, 0.12); /* stronger light fill */
+  border-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(2px); /* subtle mystic glass effect */
   border-radius: 4px;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 

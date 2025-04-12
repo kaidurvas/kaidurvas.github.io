@@ -37,10 +37,47 @@
       color: #ccc;
       line-height: 1.6;
     }
+    #global-nav {
+      text-align: center;
+      margin: 3em 0;
+    }
+    #global-nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #global-nav ul li {
+      margin: 0.5em;
+    }
+    #global-nav ul li a {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      font-size: 0.9em;
+    }
+    #global-nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
   </style>
 </head>
 <body class="is-preload">
   <div id="wrapper">
+
+    <nav id="global-nav">
+      <ul>
+        <li><a href="about.html">The Voice</a></li>
+        <li><a href="katabasis.html">The Works</a></li>
+        <li><a href="deepnote.html">Deep Note</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="contact.html">Whisper</a></li>
+      </ul>
+    </nav>
 
     <section class="section-flex">
       <div class="image">
@@ -81,10 +118,6 @@
         <p>Descent is not punishment—it is initiation. Through serpents and silence, one reaches the final transmission.</p>
       </div>
     </section>
-
-    <footer id="footer">
-      <p class="copyright">&copy; Kai Durvas. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-    </footer>
 
   </div>
 

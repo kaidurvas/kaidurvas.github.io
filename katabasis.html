@@ -8,7 +8,28 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Alternating layout for work sections */
+    /* Clean, static header lines */
+    #header {
+      position: relative;
+      z-index: 1;
+    }
+
+    #header .line-trigger {
+      position: relative;
+      height: 2rem;
+    }
+
+    #header .line-trigger::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Alternating content layout */
     .work-block {
       display: flex;
       align-items: center;
@@ -50,14 +71,9 @@
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Header (exact structure from homepage) -->
+    <!-- Header -->
     <header id="header">
-      <div class="logo"><span class="icon fa-gem"></span></div>
-
-      <div class="content">
-        <div class="inner"></div>
-      </div>
-
+      <div class="line-trigger"></div>
       <nav>
         <ul>
           <li><a href="index.html">The Voice</a></li>
@@ -69,7 +85,7 @@
       </nav>
     </header>
 
-    <!-- Alternating Content -->
+    <!-- Content -->
     <section id="content">
 
       <section class="work-block">
@@ -121,7 +137,7 @@
 
   </div>
 
-  <!-- Background -->
+  <!-- Background Layer -->
   <div id="bg"></div>
 
 </body>

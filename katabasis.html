@@ -1,71 +1,97 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Katabasis | Kai Durvas</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="is-preload">
+<head>
+  <title>Katabasis | Kai Durvas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .section-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4em;
+      flex-wrap: wrap;
+      padding: 4em 2em;
+    }
+    .section-flex.reverse {
+      flex-direction: row-reverse;
+    }
+    .section-flex .image, .section-flex .text {
+      flex: 1 1 400px;
+    }
+    .section-flex .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 0 24px rgba(0,0,0,0.4);
+    }
+    .section-flex .text h2 {
+      margin-top: 0;
+      font-size: 1.75em;
+      color: #e0d7c7;
+    }
+    .section-flex .text p {
+      font-size: 1.1em;
+      color: #ccc;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+    <section class="section-flex">
+      <div class="image">
+        <img src="images/fork300.png" alt="Forked path and obelisk">
+      </div>
+      <div class="text">
+        <h2>The Forked Path</h2>
+        <p>A choice not between good and evil—but between madness and memory. The road splits. The mind follows.</p>
+      </div>
+    </section>
 
-      <!-- Four Spotlight Sections for Katabasis -->
-      <section class="spotlight style1 orient-left content-align-left image-position-right fullscreen">
-        <div class="content">
-          <h2>The Forked Path</h2>
-          <p>A choice not between good and evil—but between madness and memory. The road splits. The mind follows.</p>
-        </div>
-        <div class="image">
-          <img src="images/fork300.png" alt="" />
-        </div>
-      </section>
+    <section class="section-flex reverse">
+      <div class="image">
+        <img src="images/olympia300.png" alt="Olympia">
+      </div>
+      <div class="text">
+        <h2>Olympia Remembered</h2>
+        <p>Before the Games became sacrifice, there was a city of knowledge, glory, and broken gods. This is its echo.</p>
+      </div>
+    </section>
 
-      <section class="spotlight style1 orient-right content-align-left image-position-left fullscreen">
-        <div class="content">
-          <h2>Olympia Remembered</h2>
-          <p>Before the Games became sacrifice, there was a city of knowledge, glory, and broken gods. This is its echo.</p>
-        </div>
-        <div class="image">
-          <img src="images/olympia300.png" alt="" />
-        </div>
-      </section>
+    <section class="section-flex">
+      <div class="image">
+        <img src="images/stadium300.png" alt="The Stadium of the Games">
+      </div>
+      <div class="text">
+        <h2>The Arena of Thought</h2>
+        <p>Combat here is sacred—each strike, a symbol. Each loss, a forgetting. Blood writes the laws of this world.</p>
+      </div>
+    </section>
 
-      <section class="spotlight style1 orient-left content-align-left image-position-right fullscreen">
-        <div class="content">
-          <h2>The Arena of Thought</h2>
-          <p>Combat here is sacred—each strike, a symbol. Each loss, a forgetting. Blood writes the laws of this world.</p>
-        </div>
-        <div class="image">
-          <img src="images/stadium300.png" alt="" />
-        </div>
-      </section>
+    <section class="section-flex reverse">
+      <div class="image">
+        <img src="images/apokolasi300.png" alt="Underworld spiral descent">
+      </div>
+      <div class="text">
+        <h2>Apokolasi</h2>
+        <p>Descent is not punishment—it is initiation. Through serpents and silence, one reaches the final transmission.</p>
+      </div>
+    </section>
 
-      <section class="spotlight style1 orient-right content-align-left image-position-left fullscreen">
-        <div class="content">
-          <h2>Apokolasi</h2>
-          <p>Descent is not punishment—it is initiation. Through serpents and silence, one reaches the final transmission.</p>
-        </div>
-        <div class="image">
-          <img src="images/apokolasi300.png" alt="" />
-        </div>
-      </section>
+    <footer id="footer">
+      <p class="copyright">&copy; Kai Durvas. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
 
-      <!-- Footer -->
-      <footer id="footer">
-        <p class="copyright">&copy; Kai Durvas. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-      </footer>
+  </div>
 
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-  </body>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

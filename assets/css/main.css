@@ -1367,6 +1367,20 @@ input, select, textarea {
 					font-size: 0.8rem;
 					border-bottom: 0;
 				}
+/* Highlight current nav item */
+#header nav ul li a.current {
+  border-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 8px rgba(255, 255, 200, 0.2);
+  animation: shimmer 3s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes shimmer {
+  0% { box-shadow: 0 0 8px rgba(255, 255, 200, 0.15); }
+  50% { box-shadow: 0 0 12px rgba(255, 255, 180, 0.35); }
+  100% { box-shadow: 0 0 8px rgba(255, 255, 200, 0.15); }
+}
+
 
 					#header nav ul li a:hover {
 						background-color: rgba(255, 255, 255, 0.075);

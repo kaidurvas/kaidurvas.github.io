@@ -37,20 +37,43 @@
       color: #ccc;
       line-height: 1.6;
     }
+    #nav-lines {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 3em;
+    }
+    #nav-lines .inner {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      padding: 2em 0;
+    }
+    #nav-lines .button {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 0.75em 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9em;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    #nav-lines .button:hover {
+      background: rgba(255,255,255,0.1);
+    }
   </style>
 </head>
 <body class="is-preload">
   <div id="wrapper">
 
-    <section id="nav-lines" class="wrapper style2 align-center">
+    <section id="nav-lines">
       <div class="inner">
-        <ul class="actions stacked">
-          <li><a href="about.html" class="button">The Voice</a></li>
-          <li><a href="katabasis.html" class="button">The Works</a></li>
-          <li><a href="deepnote.html" class="button">Deep Note</a></li>
-          <li><a href="artifacts.html" class="button">Artifacts</a></li>
-          <li><a href="contact.html" class="button">Whisper</a></li>
-        </ul>
+        <a href="about.html" class="button">The Voice</a>
+        <a href="katabasis.html" class="button">The Works</a>
+        <a href="deepnote.html" class="button">Deep Note</a>
+        <a href="artifacts.html" class="button">Artifacts</a>
+        <a href="contact.html" class="button">Whisper</a>
       </div>
     </section>
 

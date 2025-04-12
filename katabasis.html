@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* Ensure .content triggers the horizontal line */
+    #header .content {
+      position: relative;
+      height: 2rem;
+    }
+  </style>
 </head>
 <body class="is-preload">
   <div id="wrapper">
@@ -24,8 +31,8 @@
       </nav>
     </header>
 
-    <!-- Main Content -->
-    <div id="main">
+    <!-- Main Content (force display) -->
+    <div id="main" style="display: block; opacity: 1; transform: none;">
 
       <!-- Section 1 -->
       <article id="fork" class="panel">

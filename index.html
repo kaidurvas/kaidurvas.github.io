@@ -6,13 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* Override template hiding for articles */
+    #main article {
+      display: block !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
 </head>
-<body class="is-preload">
+<body>
 
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Header (required by Dimension) -->
+    <!-- Header -->
     <header id="header">
       <div class="logo"><span class="icon fa-gem"></span></div>
       <div class="content">
@@ -32,9 +40,9 @@
       </nav>
     </header>
 
-    <!-- Main (required for script logic) -->
+    <!-- Main Content -->
     <div id="main">
-      <article id="home" class="active">
+      <article id="home">
         <h2>There is no door, only descent.</h2>
         <p>You may now enter any of the temple’s chambers.</p>
       </article>
@@ -47,15 +55,15 @@
 
   </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+  <!-- Scripts (still included in case needed) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
-<!-- Background Image Layer -->
-<div id="bg"></div>
+  <!-- Background Image Layer -->
+  <div id="bg"></div>
 
 </body>
 </html>

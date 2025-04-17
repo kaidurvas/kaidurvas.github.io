@@ -8,16 +8,10 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
     #breath-sequence {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      
-      font-size: 1em;
-      font-family: 'Georgia', serif;
-      text-align: center;
-      line-height: 1.6em;
-    }
+  font-size: 1em;
+    text-align: center;
+  line-height: 1.6em;
+}
     .breath-symbol {
       font-size: 1.5em;
       display: block;
@@ -26,25 +20,25 @@
       transition: opacity 2s ease;
     }
     .final-glyph {
-      opacity: 0;
-      margin-top: 2em;
-      width: 160px;
-      height: 160px;
-      transition: opacity 2s ease;
-      filter: invert(1) brightness(1.2) contrast(1.1);
-    }
+  opacity: 1;
+  margin-top: 2em;
+  width: 160px;
+  height: 160px;
+  transition: opacity 2s ease;
+  filter: invert(1) brightness(1.2) contrast(1.1);
+}
     .final-glyph img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       display: block;
     }
-      a.active {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 0.2em;
-      opacity: 1;
-    }
+      #nav li a.active {
+  opacity: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
     #nav a {
+  border-bottom: none;
       opacity: 0.7;
       transition: opacity 0.3s ease, border-bottom 0.3s ease;
     }
@@ -62,11 +56,10 @@
       <nav id="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="katabasis.html">Books</a></li>
+<li><a href="katabasis.html">Books</a></li>
           <li><a href="artifacts.html">Art</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="rituals.html" class="active">Rituals</a></li>
-
         </ul>
       </nav>
     </header>
@@ -87,14 +80,12 @@
       <!-- Box Breathing Ritual -->
       <section id="descent" class="wrapper fullscreen style1 special fade-up" style="background-color: #000; color: #fff;">
         <div class="container">
-          <div id="breath-sequence" class="major">
-            <div>
-              <span id="breath-symbol" class="breath-symbol">↑</span>
-              <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
-            </div>
-            <div id="final-glyph" class="final-glyph" style="display: block;">
-              <img src="images/yantra.jpg" alt="Sacred Glyph" />
-            </div>
+          <div class="content">
+  <div id="final-glyph" class="final-glyph">
+    <img src="images/yantra.jpg" alt="Sacred Glyph" />
+  </div>
+</div>
+<div id="breath-sequence" class="content align-center">
           </div>
         </div>
       </section>
@@ -151,10 +142,7 @@
           breathSymbol.textContent = sequence[i].symbol;
           breathSymbol.style.opacity = 1;
           breathText.style.opacity = 1;
-          if (i === sequence.length - 1) {
-            finalGlyph.style.opacity = 1;
-            finalGlyph.style.display = 'block';
-          }
+          
           setTimeout(() => {
             i++;
             runBreathSequence();

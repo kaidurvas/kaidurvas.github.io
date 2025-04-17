@@ -8,10 +8,10 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
     #breath-sequence {
-  font-size: 1em;
-    text-align: center;
-  line-height: 1.6em;
-}
+      font-size: 1em;
+      text-align: center;
+      line-height: 1.6em;
+    }
     .breath-symbol {
       font-size: 1.5em;
       display: block;
@@ -19,13 +19,11 @@
       opacity: 0;
       transition: opacity 2s ease;
     }
-    
-    
-      #nav li a.active {
-  opacity: 1;
-}
+    #nav li a.active {
+      opacity: 1;
+    }
     #nav a {
-  border-bottom: none;
+      border-bottom: none;
       opacity: 0.7;
       transition: opacity 0.3s ease, border-bottom 0.3s ease;
     }
@@ -43,7 +41,7 @@
       <nav id="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-<li><a href="katabasis.html">Books</a></li>
+          <li><a href="katabasis.html">Books</a></li>
           <li><a href="artifacts.html">Art</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="rituals.html" class="active">Rituals</a></li>
@@ -54,34 +52,32 @@
     <main>
 
       <!-- Banner -->
-<section id="banner" style="background-image: url('images/bg.png'); background-size: cover; background-position: center;">
-  <div class="content">
-    <header>
-      <h2>The Altar</h2>
-      <p><em>Where attention is not monetized, but sanctified.</em></p>
-    </header>
-    
-  </div>
-  <a href="#descent" class="goto-next scrolly">Next</a>
-      </div>
-</div>
-</section>
+      <section id="banner" style="background-image: url('images/bg.png'); background-size: cover; background-position: center;">
+        <div class="content">
+          <header>
+            <h2>The Altar</h2>
+            <p><em>Where attention is not monetized, but sanctified.</em></p>
+          </header>
+        </div>
+        <a href="#descent" class="goto-next scrolly">Next</a>
+      </section>
 
-<!-- Descent (Breath Ritual) -->
-<section id="descent" class="wrapper style1 fullscreen" style="background-color: #111; height: 100vh;">
-  <div class="container">
-    <div class="row gtr-uniform">
-  <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
-  <img src="images/yantra.jpg" alt="Yantra" style="max-height: 60vh; width: auto; filter: invert(1) brightness(1.2) contrast(1.1);" />
-</div>
-  <div class="col-6" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      <div id="breath-sequence">
-        <span id="breath-symbol" class="breath-symbol">↑</span>
-        <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- Descent (Breath Ritual) -->
+      <section id="descent" class="wrapper style1 fullscreen" style="background-color: #111; height: 100vh;">
+        <div class="container">
+          <div class="row gtr-uniform">
+            <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+              <img src="images/yantra.png" alt="Yantra" style="max-height: 60vh; width: auto;" />
+            </div>
+            <div class="col-6" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div id="breath-sequence">
+                <span id="breath-symbol" class="breath-symbol">↑</span>
+                <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </main>
 
@@ -123,7 +119,7 @@
 
     const breathText = document.getElementById("breath-text");
     const breathSymbol = document.getElementById("breath-symbol");
-        let i = 0;
+    let i = 0;
 
     function runBreathSequence() {
       if (i < sequence.length) {
@@ -134,7 +130,7 @@
           breathSymbol.textContent = sequence[i].symbol;
           breathSymbol.style.opacity = 1;
           breathText.style.opacity = 1;
-          
+
           setTimeout(() => {
             i++;
             runBreathSequence();

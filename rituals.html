@@ -1,14 +1,9 @@
 <!DOCTYPE HTML>
-<!--
-  Landed by HTML5 UP (modified for Kai Durvas)
-  html5up.net | @ajlkn
--->
 <html>
 <head>
   <title>Rituals | Inner Sanctum</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="description" content="A breathing ritual from the mythic universe of Katabasis." />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
@@ -35,13 +30,6 @@
     #nav a:hover {
       opacity: 1;
     }
-    @keyframes slow-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .slow-blink {
-      animation: slow-blink 1.5s ease-in-out 3;
-    }
   </style>
 </head>
 <body class="is-preload landing">
@@ -61,31 +49,40 @@
       </nav>
     </header>
 
-    <!-- Banner -->
-    <section id="banner" style="background-image: url('images/bg.png'); background-size: cover; background-position: center;">
-      <div class="content">
-        <header style="text-align: center;">
-          <h2>The Altar</h2>
-          <p><em>Where attention is not monetized, but sanctified.</em></p>
-        </header>
-      </div>
-      <a href="#descent" class="goto-next scrolly">Next</a>
-    </section>
+    <main>
 
-    <!-- Ritual Section -->
-    <section id="descent" class="wrapper style1 fullscreen fade-up">
-      <div class="container">
-        <div class="row aln-center">
-          <div class="col-6 col-12-medium">
-            <span class="image fit"><img src="images/yantra.png" alt="Yantra" /></span>
-          </div>
-          <div class="col-6 col-12-medium" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h2 id="breath-text" style="min-height: 1.5em;">Arrive</h2>
+      <!-- Banner -->
+      <section id="banner" style="background-image: url('images/bg.png'); background-size: cover; background-position: center;">
+        <div class="content">
+          <header>
+<header style="text-align: center;">
+            <h2>The Altar</h2>
+            <p><em>Where attention is not monetized, but sanctified.</em></p>
+          </header>
+        </div>
+        <a href="#descent" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Descent (Breath Ritual) -->
+      <section id="descent" class="wrapper style1 fullscreen" style="background-color: #111; height: 100vh;">
+        <div class="container">
+          <div class="row gtr-uniform">
+            <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+              <img src="images/yantra.png" alt="Yantra" style="max-height: 60vh; width: auto;" />
+            </div>
+            <div class="col-6" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div id="breath-sequence">
+                <span id="breath-symbol" class="breath-symbol">↑</span>
+                <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+    </main>
+
+    <!-- Footer -->
     <footer id="footer">
       <ul class="icons">
         <li><a href="mailto:oracle@kaidurvas.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
@@ -108,22 +105,43 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
+    const sequence = [
+      { text: "Arrive", symbol: "", duration: 3000 },
+      { text: "Inhale", symbol: "↑", duration: 4000 },
+      { text: "Hold", symbol: "→", duration: 4000 },
+      { text: "Exhale", symbol: "↓", duration: 4000 },
+      { text: "Hold", symbol: "←", duration: 4000 },
+      { text: "Inhale", symbol: "↑", duration: 4000 },
+      { text: "Hold", symbol: "→", duration: 4000 },
+      { text: "Exhale", symbol: "↓", duration: 4000 },
+      { text: "Hold", symbol: "←", duration: 4000 },
+      { text: "Now descend.", symbol: "", duration: 5000 }
+    ];
+
     const breathText = document.getElementById("breath-text");
+    const breathSymbol = document.getElementById("breath-symbol");
+    let i = 0;
 
-    function startBlinking(callback) {
-      breathText.classList.add("slow-blink");
-      setTimeout(() => {
-        breathText.classList.remove("slow-blink");
-        callback();
-      }, 4500); // 3 blinks at 1.5s each
-    }
+    function runBreathSequence() {
+      if (i < sequence.length) {
+        breathText.style.opacity = 0;
+        breathSymbol.style.opacity = 0;
+        setTimeout(() => {
+          breathText.textContent = sequence[i].text;
+          breathSymbol.textContent = sequence[i].symbol;
+          breathSymbol.style.opacity = 1;
+          breathText.style.opacity = 1;
 
-    function beginBreathing() {
-      breathText.textContent = "Inhale";
+          setTimeout(() => {
+            i++;
+            runBreathSequence();
+          }, sequence[i].duration);
+        }, 1000);
+      }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      startBlinking(beginBreathing);
+      setTimeout(runBreathSequence, 1000);
     });
   </script>
 </body>

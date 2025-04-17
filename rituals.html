@@ -19,20 +19,8 @@
       opacity: 0;
       transition: opacity 2s ease;
     }
-    .final-glyph {
-  opacity: 1;
-  margin-top: 2em;
-  width: 160px;
-  height: 160px;
-  transition: opacity 2s ease;
-  filter: invert(1) brightness(1.2) contrast(1.1);
-}
-    .final-glyph img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
+    
+    
       #nav li a.active {
   opacity: 1;
 }
@@ -72,16 +60,21 @@
       <h2>The Altar</h2>
       <p><em>Where attention is not monetized, but sanctified.</em></p>
     </header>
-    <span class="image"><img src="images/spot.png" alt="Symbol" style="max-width: 350px; width: 100%;" /></span>
+    
   </div>
   <a href="#descent" class="goto-next scrolly">Next</a>
-    <a href="#next" class="goto-next scrolly">Next</a>
+      </div>
+</div>
 </section>
 
 <!-- Descent (Breath Ritual) -->
-<section id="descent" class="spotlight style2 right" style="background-color: #111;">
-  <span class="image fit main"><img src="images/yantra.jpg" alt="Yantra" style="object-fit: contain; max-width: 100%; height: auto; filter: invert(1) brightness(1.2) contrast(1.1);" /></span>
-  <div class="content align-center" style="display: flex; flex-direction: column; justify-content: center; min-height: 100%;">
+<section id="descent" class="wrapper style1 fullscreen" style="background-color: #111; height: 100vh;">
+  <div class="container">
+    <div class="row gtr-uniform">
+  <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+  <img src="images/yantra.jpg" alt="Yantra" style="max-height: 60vh; width: auto; filter: invert(1) brightness(1.2) contrast(1.1);" />
+</div>
+  <div class="col-6" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <div id="breath-sequence">
         <span id="breath-symbol" class="breath-symbol">↑</span>
         <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
@@ -130,8 +123,7 @@
 
     const breathText = document.getElementById("breath-text");
     const breathSymbol = document.getElementById("breath-symbol");
-    const finalGlyph = document.getElementById("final-glyph");
-    let i = 0;
+        let i = 0;
 
     function runBreathSequence() {
       if (i < sequence.length) {

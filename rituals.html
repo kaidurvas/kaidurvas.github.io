@@ -12,7 +12,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 90vh;
+      
       font-size: 1em;
       font-family: 'Georgia', serif;
       text-align: center;
@@ -62,8 +62,10 @@
       <nav id="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="rituals.html" class="active">Rituals</a></li>
           <li><a href="katabasis.html">Books</a></li>
+          <li><a href="artifacts.html">Art</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="rituals.html" class="active">Rituals</a></li>
           <li><a href="artifacts.html">Art</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -84,14 +86,14 @@
       </section>
 
       <!-- Box Breathing Ritual -->
-      <section id="descent" class="wrapper style1 special fade-up" style="background-color: #000; color: #fff;">
+      <section id="descent" class="wrapper fullscreen style1 special fade-up" style="background-color: #000; color: #fff;">
         <div class="container">
           <div id="breath-sequence" class="major">
             <div>
               <span id="breath-symbol" class="breath-symbol">↑</span>
               <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
             </div>
-            <div id="final-glyph" class="final-glyph">
+            <div id="final-glyph" class="final-glyph" style="display: block;">
               <img src="images/yantra.jpg" alt="Sacred Glyph" />
             </div>
           </div>
@@ -124,6 +126,7 @@
   <script src="assets/js/main.js"></script>
   <script>
     const sequence = [
+      { text: "Arrive", symbol: "", duration: 3000 },
       { text: "Inhale", symbol: "↑", duration: 4000 },
       { text: "Hold", symbol: "→", duration: 4000 },
       { text: "Exhale", symbol: "↓", duration: 4000 },
@@ -151,6 +154,7 @@
           breathText.style.opacity = 1;
           if (i === sequence.length - 1) {
             finalGlyph.style.opacity = 1;
+            finalGlyph.style.display = 'block';
           }
           setTimeout(() => {
             i++;

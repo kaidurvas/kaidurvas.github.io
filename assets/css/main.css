@@ -3969,7 +3969,7 @@ input, select, textarea {
 				padding: 0.75em 1.25em;
 			}
 
-#nav li a.active {
+#nav > ul > li > a.active {
   opacity: 1;
 }
 #nav li a {

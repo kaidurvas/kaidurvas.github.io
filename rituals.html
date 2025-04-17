@@ -12,7 +12,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
+      height: 90vh;
       font-size: 1em;
       font-family: 'Georgia', serif;
       text-align: center;
@@ -27,9 +27,29 @@
     }
     .final-glyph {
       opacity: 0;
-      font-size: 2.5em;
-      margin-top: 1em;
+      margin-top: 2em;
+      width: 160px;
+      height: 160px;
       transition: opacity 2s ease;
+      filter: invert(1) brightness(1.2) contrast(1.1);
+    }
+    .final-glyph img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+      a.active {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.2em;
+      opacity: 1;
+    }
+    #nav a {
+      opacity: 0.7;
+      transition: opacity 0.3s ease, border-bottom 0.3s ease;
+    }
+    #nav a:hover {
+      opacity: 1;
     }
   </style>
 </head>
@@ -42,6 +62,7 @@
       <nav id="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
+          <li><a href="rituals.html" class="active">Rituals</a></li>
           <li><a href="katabasis.html">Books</a></li>
           <li><a href="artifacts.html">Art</a></li>
           <li><a href="about.html">About</a></li>
@@ -70,7 +91,9 @@
               <span id="breath-symbol" class="breath-symbol">↑</span>
               <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
             </div>
-            <div id="final-glyph" class="final-glyph">⟁</div>
+            <div id="final-glyph" class="final-glyph">
+              <img src="images/yantra.jpg" alt="Sacred Glyph" />
+            </div>
           </div>
         </div>
       </section>
@@ -126,13 +149,14 @@
           breathSymbol.textContent = sequence[i].symbol;
           breathSymbol.style.opacity = 1;
           breathText.style.opacity = 1;
+          if (i === sequence.length - 1) {
+            finalGlyph.style.opacity = 1;
+          }
           setTimeout(() => {
             i++;
             runBreathSequence();
           }, sequence[i].duration);
         }, 1000);
-      } else {
-        finalGlyph.style.opacity = 1;
       }
     }
 

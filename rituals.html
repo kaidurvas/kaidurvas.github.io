@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Rituals | Inner Sanctum</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    #breath-sequence {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      font-size: 2em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="is-preload landing">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <h1 id="logo"><a href="index.html">Kai Durvas</a></h1>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="katabasis.html">Books</a></li>
+          <li><a href="artifacts.html">Art</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Banner -->
+      <section id="banner" style="background-color: #000; color: #fff;">
+        <div class="content">
+          <header>
+            <h2>Inner Sanctum</h2>
+            <p>Where attention is not monetized, but sanctified.</p>
+          </header>
+        </div>
+        <a href="#descent" class="goto-next scrolly">Next</a>
+      </section>
+
+      <!-- Breathing Descent Ritual -->
+      <section id="descent" class="wrapper style1 special fade-up" style="background-color: #000; color: #fff;">
+        <div class="container">
+          <div id="breath-sequence" class="major">
+            <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale…</h2>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <ul class="icons">
+        <li><a href="mailto:oracle@kaidurvas.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+      <ul class="copyright">
+        <li>&copy; Kai Durvas</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.dropotron.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const sequence = [
+      { text: "Inhale…", duration: 4000 },
+      { text: "Hold…", duration: 3000 },
+      { text: "Exhale…", duration: 5000 },
+      { text: "Hold…", duration: 3000 },
+      { text: "Inhale…", duration: 4000 },
+      { text: "Exhale…", duration: 5000 },
+      { text: "Hold…", duration: 3000 },
+      { text: "Now descend.", duration: 6000 }
+    ];
+
+    const breathText = document.getElementById("breath-text");
+    let i = 0;
+
+    function runBreathSequence() {
+      if (i < sequence.length) {
+        breathText.style.opacity = 0;
+        setTimeout(() => {
+          breathText.textContent = sequence[i].text;
+          breathText.style.opacity = 1;
+          setTimeout(() => {
+            i++;
+            runBreathSequence();
+          }, sequence[i].duration);
+        }, 1000);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(runBreathSequence, 1000);
+    });
+  </script>
+</body>
+</html>

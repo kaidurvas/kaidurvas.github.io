@@ -12,16 +12,16 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 60vh;
-      font-size: 1.25em;
+      min-height: 100vh;
+      font-size: 1.1em;
       font-family: 'Georgia', serif;
       text-align: center;
-      line-height: 1.8em;
+      line-height: 1.6em;
     }
     .breath-symbol {
-      font-size: 2em;
+      font-size: 1.5em;
       display: block;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.3em;
     }
     .final-glyph {
       opacity: 0;
@@ -65,8 +65,8 @@
         <div class="container">
           <div id="breath-sequence" class="major">
             <div>
-              <span class="breath-symbol">➤</span>
-              <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale…</h2>
+              <span id="breath-symbol" class="breath-symbol">↑</span>
+              <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
             </div>
             <div id="final-glyph" class="final-glyph">⟁</div>
           </div>
@@ -99,27 +99,31 @@
   <script src="assets/js/main.js"></script>
   <script>
     const sequence = [
-      { text: "Inhale…", duration: 4000 },
-      { text: "Hold…", duration: 4000 },
-      { text: "Exhale…", duration: 4000 },
-      { text: "Hold…", duration: 4000 },
-      { text: "Inhale…", duration: 4000 },
-      { text: "Hold…", duration: 4000 },
-      { text: "Exhale…", duration: 4000 },
-      { text: "Hold…", duration: 4000 },
-      { text: "Now descend.", duration: 5000 }
+      { text: "Inhale", symbol: "↑", duration: 4000 },
+      { text: "Hold", symbol: "→", duration: 4000 },
+      { text: "Exhale", symbol: "↓", duration: 4000 },
+      { text: "Hold", symbol: "←", duration: 4000 },
+      { text: "Inhale", symbol: "↑", duration: 4000 },
+      { text: "Hold", symbol: "→", duration: 4000 },
+      { text: "Exhale", symbol: "↓", duration: 4000 },
+      { text: "Hold", symbol: "←", duration: 4000 },
+      { text: "Now descend.", symbol: "", duration: 5000 }
     ];
 
     const breathText = document.getElementById("breath-text");
+    const breathSymbol = document.getElementById("breath-symbol");
     const finalGlyph = document.getElementById("final-glyph");
     let i = 0;
 
     function runBreathSequence() {
       if (i < sequence.length) {
         breathText.style.opacity = 0;
+        breathSymbol.style.opacity = 0;
         setTimeout(() => {
-          breathText.textContent = "➤ " + sequence[i].text;
+          breathText.textContent = sequence[i].text;
+          breathSymbol.textContent = sequence[i].symbol;
           breathText.style.opacity = 1;
+          breathSymbol.style.opacity = 1;
           setTimeout(() => {
             i++;
             runBreathSequence();

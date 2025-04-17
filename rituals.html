@@ -35,7 +35,6 @@
     }
       #nav li a.active {
   opacity: 1;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
     #nav a {
   border-bottom: none;
@@ -67,18 +66,28 @@
     <main>
 
       <!-- Banner -->
-      <section id="banner" style="background-color: #000; color: #fff;">
-        <div class="content">
-          <header>
-            <h2>Inner Sanctum</h2>
-            <p>Where attention is not monetized, but sanctified.</p>
-          </header>
-        </div>
-        <a href="#descent" class="goto-next scrolly">Next</a>
-      </section>
+<section id="banner" style="background-image: url('images/bg.png'); background-size: cover; background-position: center;">
+  <div class="content">
+    <header>
+      <h2>The Altar</h2>
+      <p><em>Where attention is not monetized, but sanctified.</em></p>
+    </header>
+    <span class="image"><img src="images/spot.png" alt="Symbol" style="max-width: 350px; width: 100%;" /></span>
+  </div>
+  <a href="#descent" class="goto-next scrolly">Next</a>
+</section>
 
-      <!-- Box Breathing Ritual -->
-      <section id="descent" class="wrapper fullscreen style1 special fade-up" style="background-color: #000; color: #fff;">
+<!-- Descent (Breath Ritual) -->
+<section id="descent" class="wrapper fullscreen style1 special fade-up" style="background-color: #000; color: #fff; background-image: url('images/yantra.jpg'); background-repeat: no-repeat; background-size: contain; background-position: left center;">
+  <div class="container">
+    <div class="content align-center">
+      <div id="breath-sequence">
+        <span id="breath-symbol" class="breath-symbol">↑</span>
+        <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
+      </div>
+    </div>
+  </div>
+</section> class="wrapper fullscreen style1 special fade-up" style="background-color: #000; color: #fff;">
         <div class="container">
           <div class="content">
   <div id="final-glyph" class="final-glyph">

@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
+<!--
+  Landed by HTML5 UP (modified for Kai Durvas)
+  html5up.net | @ajlkn
+-->
 <html>
 <head>
   <title>Rituals | Inner Sanctum</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="A breathing ritual from the mythic universe of Katabasis." />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
@@ -30,6 +35,13 @@
     #nav a:hover {
       opacity: 1;
     }
+    @keyframes slow-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .slow-blink {
+      animation: slow-blink 1.5s ease-in-out 3;
+    }
   </style>
 </head>
 <body class="is-preload landing">
@@ -54,8 +66,7 @@
       <!-- Banner -->
       <section id="banner" style="background-image: url('images/bg.png'); background-size: cover; background-position: center;">
         <div class="content">
-          <header>
-<header style="text-align: center;">
+          <header style="text-align: center;">
             <h2>The Altar</h2>
             <p><em>Where attention is not monetized, but sanctified.</em></p>
           </header>
@@ -72,7 +83,7 @@
             </div>
             <div class="col-6" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
               <div id="breath-sequence">
-                <span id="breath-symbol" class="breath-symbol">↑</span>
+                <span id="breath-symbol" class="breath-symbol">○</span>
                 <h2 id="breath-text" style="opacity: 0; transition: opacity 2s ease;">Inhale</h2>
               </div>
             </div>
@@ -106,7 +117,7 @@
   <script src="assets/js/main.js"></script>
   <script>
     const sequence = [
-      { text: "Arrive", symbol: "", duration: 3000 },
+      { text: "Arrive", symbol: "○", duration: 3000 },
       { text: "Inhale", symbol: "↑", duration: 4000 },
       { text: "Hold", symbol: "→", duration: 4000 },
       { text: "Exhale", symbol: "↓", duration: 4000 },
@@ -131,6 +142,13 @@
           breathSymbol.textContent = sequence[i].symbol;
           breathSymbol.style.opacity = 1;
           breathText.style.opacity = 1;
+
+          if (sequence[i].text === "Arrive") {
+            breathText.classList.add("slow-blink");
+            setTimeout(() => {
+              breathText.classList.remove("slow-blink");
+            }, sequence[i].duration);
+          }
 
           setTimeout(() => {
             i++;

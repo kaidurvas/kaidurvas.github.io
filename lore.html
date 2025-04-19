@@ -11,20 +11,20 @@
   <meta name="description" content="Essays and transmissions from the universe of Katabasis. Explore mythic strategy, divine memory, and the fragments left by Phoibos and other gods." />
   <link rel="canonical" href="https://kaidurvas.com/lore.html" />
 
-  <!-- Open Graph (Facebook, LinkedIn) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Lore | Mythic Commentaries by Kai Durvas" />
   <meta property="og:description" content="Fragments of strategy, consciousness, and divine memory. A mythic essay series from the world of Katabasis." />
   <meta property="og:image" content="https://kaidurvas.com/images/lore.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kaidurvas.com/lore.html" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lore | Essays from the World of Katabasis" />
   <meta name="twitter:description" content="Fragments of myth and revelation—explore the transmissions of Phoibos, Ultor, and others." />
   <meta name="twitter:image" content="https://kaidurvas.com/images/lore.png" />
 
-  <!-- Schema.org Markup -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,10 +69,10 @@
       </div>
     </section>
 
-    <!-- Posts placeholder -->
-    <section class="wrapper style1">
+    <!-- Lore Post Grid -->
+    <section class="wrapper style1 fade-up">
       <div class="container" id="post-container">
-        <!-- Posts will be injected here -->
+        <!-- Dynamic blog posts will be injected here -->
       </div>
     </section>
 
@@ -98,6 +98,8 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- Blog loader -->
   <script>
     fetch('posts/posts.json')
       .then(res => res.json())
@@ -105,20 +107,16 @@
         const container = document.getElementById('post-container');
         posts.forEach(post => {
           const html = `
-            <section class="spotlight style2">
-              <div class="row">
-                <div class="col-6 col-12-medium">
-                  <span class="image fit"><img src="${post.image}" alt="${post.title}" /></span>
-                </div>
-                <div class="col-6 col-12-medium">
-                  <header>
-                    <h2>${post.title}</h2>
-                  </header>
-                  <p>${post.excerpt}</p>
-                  <ul class="actions">
-                    <li><a href="posts/${post.slug}.html" class="button">${post.button}</a></li>
-                  </ul>
-                </div>
+            <section class="spotlight style2 left">
+              <div class="image fit"><img src="${post.image}" alt="${post.title}" /></div>
+              <div class="content">
+                <header>
+                  <h2>${post.title}</h2>
+                </header>
+                <p>${post.excerpt}</p>
+                <ul class="actions">
+                  <li><a href="posts/${post.slug}.html" class="button">${post.button}</a></li>
+                </ul>
               </div>
             </section>
           `;

@@ -69,10 +69,10 @@
       </div>
     </section>
 
-    <!-- Main content placeholder -->
+    <!-- Posts placeholder -->
     <section class="wrapper style1">
-      <div class="container">
-        <p>Posts coming soon...</p>
+      <div class="container" id="post-container">
+        <!-- Posts will be injected here -->
       </div>
     </section>
 
@@ -98,5 +98,33 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    fetch('posts/posts.json')
+      .then(res => res.json())
+      .then(posts => {
+        const container = document.getElementById('post-container');
+        posts.forEach(post => {
+          const html = `
+            <section class="spotlight style2">
+              <div class="row">
+                <div class="col-6 col-12-medium">
+                  <span class="image fit"><img src="${post.image}" alt="${post.title}" /></span>
+                </div>
+                <div class="col-6 col-12-medium">
+                  <header>
+                    <h2>${post.title}</h2>
+                  </header>
+                  <p>${post.excerpt}</p>
+                  <ul class="actions">
+                    <li><a href="posts/${post.slug}.html" class="button">${post.button}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          `;
+          container.innerHTML += html;
+        });
+      });
+  </script>
 </body>
 </html>

@@ -39,44 +39,11 @@
   }
   </script>
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="assets/css/main.css" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" as="style">
+  <!-- Fonts (Safe, async) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap"></noscript>
 
-  <!-- Critical CSS to avoid FOUC -->
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #banner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #111;
-      color: #eee;
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    #banner h2 {
-      font-size: 2.25em;
-      margin-bottom: 0.3em;
-    }
-
-    #banner p {
-      font-size: 1.15em;
-      font-style: italic;
-      opacity: 0.8;
-    }
-  </style>
-
-  <!-- Fonts fallback -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" />
-
-  <!-- Main Styles -->
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -269,14 +236,14 @@
 
   </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js" defer></script>
-<script src="assets/js/jquery.scrolly.min.js" defer></script>
-<script src="assets/js/jquery.dropotron.min.js" defer></script>
-<script src="assets/js/jquery.scrollex.min.js" defer></script>
-<script src="assets/js/browser.min.js" defer></script>
-<script src="assets/js/breakpoints.min.js" defer></script>
-<script src="assets/js/util.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.dropotron.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

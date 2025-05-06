@@ -37,4 +37,22 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://kaidurvas.com/posts/breaking.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://kaidurvas.com/posts/firstkatabasis.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://kaidurvas.com/posts/underworldtrials.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

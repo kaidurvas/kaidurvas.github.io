@@ -39,48 +39,56 @@
   }
   </script>
 
-  <!-- Force early text paint -->
-  <style>html { font-display: swap; }</style>
-
-  <!-- Font (non-blocking) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" />
-
-  <!-- Inline critical CSS (example only) -->
+  <!-- Critical CSS for LCP Element: Banner -->
   <style>
     #banner {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background: #000; /* fallback color */
-      color: #fff;
+      background: black;
+      color: white;
       text-align: center;
+      font-family: 'Roboto', sans-serif;
     }
-    #banner .content h2 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
+
+    #banner h2 {
+      font-size: 2.25em;
+      margin-bottom: 0.25em;
     }
-    #banner .content p {
-      font-size: 1.2em;
+
+    #banner p {
+      font-size: 1.1em;
       font-style: italic;
+      opacity: 0.9;
+    }
+
+    #banner .goto-next {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   </style>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <!-- Fonts (async, safe fallback) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap"></noscript>
 
-  <!-- Google Analytics (deferred) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RJ4LMC5MQG"></script>
+  <!-- Defer loading full CSS -->
+  <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/main.css" /></noscript>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ4LMC5MQG"></script>
   <script>
-    window.addEventListener('load', function () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RJ4LMC5MQG');
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ4LMC5MQG');
   </script>
 </head>
+
 
 
 <body class="is-preload landing">

@@ -23,7 +23,7 @@
   <meta name="twitter:description" content="Enter the Temple — the official site of Kai Durvas, mythic fantasy author of Katabasis." />
   <meta name="twitter:image" content="https://kaidurvas.com/images/katabasis-cover.png" />
 
-  <!-- Structured Data (Optional – only if valid) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,8 +39,12 @@
   }
   </script>
 
-  <!-- Fonts (Safe load) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" />
+  <!-- Preload hero background for LCP -->
+  <link rel="preload" as="image" href="images/bg4.webp" type="image/webp">
+
+  <!-- Fonts (Safe, async) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap"></noscript>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -55,6 +59,7 @@
     gtag('config', 'G-RJ4LMC5MQG');
   </script>
 </head>
+
 
 <body class="is-preload landing">
   <div id="page-wrapper">

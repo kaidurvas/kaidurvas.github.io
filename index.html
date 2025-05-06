@@ -39,48 +39,57 @@
   }
   </script>
 
-  <!-- Force early text paint -->
-  <style>html { font-display: swap; }</style>
+  <!-- Preload critical resources -->
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" as="style">
 
-  <!-- Font (non-blocking) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" />
-
-  <!-- Inline critical CSS (example only) -->
+  <!-- Critical CSS to avoid FOUC -->
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
     #banner {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background: #000; /* fallback color */
-      color: #fff;
+      background: #111;
+      color: #eee;
       text-align: center;
+      font-family: 'Roboto', sans-serif;
     }
-    #banner .content h2 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
+
+    #banner h2 {
+      font-size: 2.25em;
+      margin-bottom: 0.3em;
     }
-    #banner .content p {
-      font-size: 1.2em;
+
+    #banner p {
+      font-size: 1.15em;
       font-style: italic;
+      opacity: 0.8;
     }
   </style>
 
-  <!-- Main CSS -->
+  <!-- Fonts fallback -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:300&display=swap" />
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Google Analytics (deferred) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RJ4LMC5MQG"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ4LMC5MQG"></script>
   <script>
-    window.addEventListener('load', function () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RJ4LMC5MQG');
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ4LMC5MQG');
   </script>
 </head>
+
 
 
 <body class="is-preload landing">
@@ -260,14 +269,14 @@
 
   </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/jquery.dropotron.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js" defer></script>
+<script src="assets/js/jquery.scrolly.min.js" defer></script>
+<script src="assets/js/jquery.dropotron.min.js" defer></script>
+<script src="assets/js/jquery.scrollex.min.js" defer></script>
+<script src="assets/js/browser.min.js" defer></script>
+<script src="assets/js/breakpoints.min.js" defer></script>
+<script src="assets/js/util.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

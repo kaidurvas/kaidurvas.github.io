@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: *
+Disallow: /about
+
 Sitemap: https://kaidurvas.com/sitemap.xml
